@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public int noOfPlaneTypes;
     public GameObject [] allPlanes;
     public int selectedPlaneIndex;
+    public int difficulty = 2;
 
     private void Awake()
     {
@@ -38,9 +39,9 @@ public class GameManager : MonoBehaviour
     void CreatePlanesOrdersTables()
     {
         planes = new int[noOfPlaneTypes];
-        planes[0] = 0;  //iloœæ czekaj¹cych zamówieñ danego typu (ta wartoœæ bêdzie gdzie indziej zmieniana, tu dodana do testów)
-        planes[1] = 0;
-        planes[2] = 0;
+        //planes[0] = 0;  //iloœæ czekaj¹cych zamówieñ danego typu (ta wartoœæ bêdzie gdzie indziej zmieniana, tu dodana do testów)
+        //planes[1] = 0;
+        //planes[2] = 0;
 
         activeOrdersTable = new OrderInfo[noOfPlaneTypes][];
         for (int i = 0; i < noOfPlaneTypes; i++)
@@ -68,20 +69,61 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void GenerateOrder()
+    public void CheckAndGenerateOrder()
     {
         int generatedOrderIndex = Random.Range(0, noOfPlaneTypes);
-        if (planes[generatedOrderIndex] == 5)
+        if (planes[generatedOrderIndex] == maxOrdersPerType)
         {
-            // rage, destroy 1 plane
+            DestroyFirstOrder(generatedOrderIndex);
+            SwapOrdersUp(generatedOrderIndex);
+            GenerateOrder(generatedOrderIndex, maxOrdersPerType - 1);
         }
         else
         {
-            GameObject tempObject = Instantiate(orderPrefab);
-            activeOrdersTable[generatedOrderIndex][planes[generatedOrderIndex]] = tempObject.GetComponent<OrderInfo>();
-            activeOrdersTable[generatedOrderIndex][planes[generatedOrderIndex]].orderTypeIndex = generatedOrderIndex;
-            planes[generatedOrderIndex]++;
+            GenerateOrder(generatedOrderIndex, planes[generatedOrderIndex]);
+        }        
+    }
+
+    void GenerateOrder(int index, int newPlaneNumber)
+    {
+        GameObject tempObject = Instantiate(orderPrefab);
+        activeOrdersTable[index][newPlaneNumber] = tempObject.GetComponent<OrderInfo>();
+        activeOrdersTable[index][newPlaneNumber].orderTypeIndex = index;
+        activeOrdersTable[index][newPlaneNumber].orderDifficulty = difficulty;
+
+        if (planes[index] < maxOrdersPerType)
+        {
+            planes[index]++;
         }
-        
+        //PrintOrders();
+    }
+
+
+    void DestroyFirstOrder(int index)
+    {
+        Destroy(activeOrdersTable[index][0].gameObject);
+        // --------------------------------------------------------------------------------------------------GENERATE RAGE
+    }
+
+    void SwapOrdersUp(int index)
+    {
+        for (int i = 1; i < maxOrdersPerType; i++)
+        {
+            activeOrdersTable[index][i - 1] = activeOrdersTable[index][i];
+        }
+    }
+
+    void PrintOrders() //Test
+    {
+        for (int i = 0; i < noOfPlaneTypes; i++)
+        {
+            for (int j = 0; j < maxOrdersPerType; j++)
+            {
+                if (activeOrdersTable[i][j] != null)
+                {
+                    Debug.Log("qwe[" + i + "][" + j+ "] = " + activeOrdersTable[i][j].orderDifficulty);                
+                }
+            }
+        }
     }
 }

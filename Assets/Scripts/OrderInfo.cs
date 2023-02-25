@@ -5,6 +5,7 @@ using UnityEngine;
 public class OrderInfo : MonoBehaviour
 {
     public int orderTypeIndex;
+    public int orderDifficulty;
 
     // Start is called before the first frame update
     void Start()
