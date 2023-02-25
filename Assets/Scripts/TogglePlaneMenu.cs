@@ -27,6 +27,7 @@ public class TogglePlaneMenu : MonoBehaviour
         else
         {
             planeMenu.SetActive(true);
+            planeMenu.GetComponent<ShowRightPlanes>().ShowPlanes();
         }
     }
 }

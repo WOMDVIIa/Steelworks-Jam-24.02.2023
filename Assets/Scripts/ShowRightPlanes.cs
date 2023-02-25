@@ -11,9 +11,18 @@ public class ShowRightPlanes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //writingPlanes = new GameObject[GameManager.maxOrdersPerType];
 
-        for (int i = 0; i < GameManager.instance.noOfPlaneTypes; i++)
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void ShowPlanes()
+    {
+        for (int i = 0; i < GameManager.instance.maxOrdersPerType; i++)
         {
             if (i < GameManager.instance.planes[0])
             {
@@ -30,13 +39,5 @@ public class ShowRightPlanes : MonoBehaviour
                 mathPlanes[i].SetActive(true);
             }
         }
-
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
