@@ -14,8 +14,8 @@ public class PersonStats : MonoBehaviour
     float minStats = 0.0f;
     float maxStats = 3.0f;
     float waitingForJobTimer;
-    float minWaitingTime = 13.0f;
-    float maxWaitingTime = 17.0f;
+    float minWaitingTime = 50.0f;
+    float maxWaitingTime = 60.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +38,10 @@ public class PersonStats : MonoBehaviour
 
     private void OnMouseOver()
     {
-        UnemployedHandlerObject.DisplayStats(skillSet);
+        if (!GameManager.instance.planeMenuOn)
+        {
+            UnemployedHandlerObject.DisplayStats(skillSet);
+        }
     }
 
     private void OnMouseExit()

@@ -5,16 +5,18 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public bool planeMenuOn = false;
 
-    [SerializeField] GameObject orderPrefab;
     public OrderInfo[][] activeOrdersTable;
-
     public int [] planes;
     public int maxOrdersPerType;
     public int noOfPlaneTypes;
     public GameObject [] allPlanes;
     public int selectedPlaneIndex;
     public int difficulty = 2;
+
+    [SerializeField] GameObject planeMenuObject;
+    [SerializeField] GameObject orderPrefab;
 
     private void Awake()
     {
@@ -110,6 +112,21 @@ public class GameManager : MonoBehaviour
         for (int i = 1; i < maxOrdersPerType; i++)
         {
             activeOrdersTable[index][i - 1] = activeOrdersTable[index][i];
+        }
+    }
+
+    public void TogglePlaneMenu()
+    {
+        if (planeMenuObject.active)
+        {
+            planeMenuObject.SetActive(false);
+            planeMenuOn = false;
+        }
+        else
+        {
+            planeMenuObject.SetActive(true);
+            planeMenuObject.GetComponent<ShowRightPlanes>().ShowPlanes();
+            planeMenuOn = true;
         }
     }
 
