@@ -1647,6 +1647,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5609859181802542749, guid: dbc8be91a7698784d963e22d52a7ab09, type: 3}
   m_PrefabInstance: {fileID: 453364229}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &750490334 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1200498369834429102, guid: f1f3044443480204e9b0dd62856bf4ab, type: 3}
+  m_PrefabInstance: {fileID: 1200498369940561225}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &750490340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750490334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57effc6186478e84fb5b99aecb7c8ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planePrefab: {fileID: 1200498369834429102, guid: f1f3044443480204e9b0dd62856bf4ab, type: 3}
+  forceMultiplayer: 200
+  rotationMultiplayer: 50
+  force: 0
 --- !u!1 &883277925
 GameObject:
   m_ObjectHideFlags: 0
@@ -4163,6 +4184,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1200498369834429089, guid: f1f3044443480204e9b0dd62856bf4ab, type: 3}
+      propertyPath: planePrefab
+      value: 
+      objectReference: {fileID: 1200498369834429102, guid: f1f3044443480204e9b0dd62856bf4ab, type: 3}
     - target: {fileID: 1200498369834429093, guid: f1f3044443480204e9b0dd62856bf4ab, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -4211,7 +4236,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Plane
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4171930625967485754, guid: f1f3044443480204e9b0dd62856bf4ab, type: 3}
+    - {fileID: 1200498369834429088, guid: f1f3044443480204e9b0dd62856bf4ab, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f1f3044443480204e9b0dd62856bf4ab, type: 3}
 --- !u!1001 &1752970392161998628
 PrefabInstance:

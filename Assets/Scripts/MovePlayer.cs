@@ -8,8 +8,11 @@ public class MovePlayer : MonoBehaviour
     
     float sinArgument;
     float horizontalInput;
-    float rotationMultiplayer = 30;
+    [SerializeField] float forceMultiplayer;
+    [SerializeField] float rotationMultiplayer = 50;
     [SerializeField] float force;
+
+    GameObject newPlane;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +24,7 @@ public class MovePlayer : MonoBehaviour
     {
         RotatePlayer();
         force = ThrowForce();
-        ThrowPlane(force);
+        //ThrowPlane(force);
 
     }
 
@@ -33,7 +36,10 @@ public class MovePlayer : MonoBehaviour
 
     void ThrowPlane(float force)
     {
-         force = 0;
+
+        newPlane = Instantiate(planePrefab, transform.position, transform.rotation);
+        newPlane.GetComponent<Rigidbody>().AddRelativeForce(Vector3.up * force, ForceMode.Impulse);
+        force = 0;
     }
 
     float ThrowForce()
