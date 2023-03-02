@@ -36,9 +36,8 @@ public class MovePlayer : MonoBehaviour
 
     void ThrowPlane(float force)
     {
-
         newPlane = Instantiate(planePrefab, transform.position, transform.rotation);
-        newPlane.GetComponent<Rigidbody>().AddRelativeForce(Vector3.up * force, ForceMode.Impulse);
+        newPlane.GetComponent<Rigidbody>().AddRelativeForce(Vector3.up * (1 + force) * forceMultiplayer, ForceMode.Impulse);
         force = 0;
     }
 

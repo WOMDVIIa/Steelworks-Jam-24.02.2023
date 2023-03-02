@@ -1665,7 +1665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planePrefab: {fileID: 1200498369834429102, guid: f1f3044443480204e9b0dd62856bf4ab, type: 3}
-  forceMultiplayer: 200
+  forceMultiplayer: 5
   rotationMultiplayer: 50
   force: 0
 --- !u!1 &883277925
@@ -4198,11 +4198,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1200498369834429093, guid: f1f3044443480204e9b0dd62856bf4ab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.07
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 1200498369834429093, guid: f1f3044443480204e9b0dd62856bf4ab, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1200498369834429093, guid: f1f3044443480204e9b0dd62856bf4ab, type: 3}
       propertyPath: m_LocalRotation.w
