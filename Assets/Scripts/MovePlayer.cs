@@ -8,9 +8,9 @@ public class MovePlayer : MonoBehaviour
     
     float sinArgument;
     float horizontalInput;
-    [SerializeField] float forceMultiplayer;
-    [SerializeField] float rotationMultiplayer = 50;
-    [SerializeField] float force;
+    float forceMultiplayer = 7;
+    float rotationMultiplayer = 50;
+    float force;
 
     GameObject newPlane;
     // Start is called before the first frame update
@@ -24,8 +24,6 @@ public class MovePlayer : MonoBehaviour
     {
         RotatePlayer();
         force = ThrowForce();
-        //ThrowPlane(force);
-
     }
 
     void RotatePlayer()
