@@ -40,7 +40,4 @@ public class PlaneSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         select.SetActive(false);
     }
-
-
-
 }

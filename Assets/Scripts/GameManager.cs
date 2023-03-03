@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -117,7 +118,7 @@ public class GameManager : MonoBehaviour
 
     public void TogglePlaneMenu()
     {
-        if (planeMenuObject.active)
+        if (planeMenuObject.activeSelf)
         {
             planeMenuObject.SetActive(false);
             planeMenuOn = false;
@@ -130,7 +131,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void PrintOrders() //Test
+    void PrintOrders() //Debug
     {
         for (int i = 0; i < noOfPlaneTypes; i++)
         {
@@ -143,4 +144,10 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(0);
+    }
+
 }

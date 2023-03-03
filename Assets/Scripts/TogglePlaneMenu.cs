@@ -20,7 +20,7 @@ public class TogglePlaneMenu : MonoBehaviour
 
     public void Toggle()
     {
-        if (planeMenu.active)
+        if (planeMenu.activeSelf)
         {
             planeMenu.SetActive(false);
         }
