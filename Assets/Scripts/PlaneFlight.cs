@@ -30,6 +30,9 @@ public class PlaneFlight : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Destroy(gameObject);
-        Destroy(collision.gameObject);
+        if (!collision.gameObject.CompareTag("Collector"))
+        {
+            Destroy(collision.gameObject);        
+        }
     }
 }

@@ -9,8 +9,8 @@ public class PersonStats : MonoBehaviour
 
     //GameObject statsDisplay;
     UnemployedHandling UnemployedHandlerObject;
-    float minWaitingForNextUnemployed = 1.0f;
-    float maxWaitingForNextUnemployed = 2.0f;
+    float minWaitingForNextUnemployed = 10.0f;
+    float maxWaitingForNextUnemployed = 20.0f;
     float minStats = 0.0f;
     float maxStats = 3.0f;
     float waitingForJobTimer;
