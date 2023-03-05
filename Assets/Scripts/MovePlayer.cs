@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class MovePlayer : MonoBehaviour
 {
+    public float force;
+
     [SerializeField] GameObject planePrefab;
-    
+    [SerializeField] GameObject throwStrengthMask;
+
     float sinArgument;
     float horizontalInput;
     float forceMultiplayer = 7;
     float rotationMultiplayer = 50;
-    float force;
 
     GameObject newPlane;
     // Start is called before the first frame update
@@ -24,6 +26,7 @@ public class MovePlayer : MonoBehaviour
     {
         RotatePlayer();
         force = ThrowForce();
+        throwStrengthMask.gameObject.transform.localScale = new Vector3(1 - force, 1, 1);
     }
 
     void RotatePlayer()
