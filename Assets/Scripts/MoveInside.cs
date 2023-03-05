@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class MoveInside : MonoBehaviour
 {
+    public float destinationX;
+    public int direction;
+
     [SerializeField] GameObject objectToMove;
-    int moveFrames = 20;
     float frameJumpMultiplayer = 100;
 
     private void OnMouseDown()
@@ -15,16 +17,27 @@ public class MoveInside : MonoBehaviour
 
     IEnumerator SingleFrameDelay()
     {
-        for (int i = 0; i < moveFrames; i++)
+        if (direction > 0)
         {
-            yield return new WaitForSeconds(0.01f);
-            objectToMove.transform.Translate(Vector3.right * frameJumpMultiplayer * Time.deltaTime);
+            while (objectToMove.transform.position.x < destinationX)
+            {
+                yield return new WaitForSeconds(0.01f);
+                objectToMove.transform.Translate(Vector3.right * direction * frameJumpMultiplayer * Time.deltaTime);
+            }
+        }
+        else
+        {
+            while (objectToMove.transform.position.x > destinationX)
+            {
+                yield return new WaitForSeconds(0.01f);
+                objectToMove.transform.Translate(Vector3.right * direction * frameJumpMultiplayer * Time.deltaTime);
+            }
         }
         MoveToFixedPosition();
     }
 
     void MoveToFixedPosition()
     {
-        objectToMove.transform.position = new Vector3(20, 1, -2);
+        objectToMove.transform.position = new Vector3(destinationX, 1, -2);
     }
 }
