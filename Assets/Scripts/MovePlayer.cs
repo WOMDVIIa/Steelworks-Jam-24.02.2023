@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class MovePlayer : MonoBehaviour
 {
-    public float force;
 
     [SerializeField] GameObject planePrefab;
-    [SerializeField] GameObject throwStrengthMask;
+    [SerializeField] RectTransform throwStrengthImage;
+    [SerializeField] RectTransform throwStrengthMask;
+    float maskingForceMultiplayer = 97;
+    float maskAndImageOffset = 107;
 
+    float force;
     float sinArgument;
     float horizontalInput;
     float forceMultiplayer = 7;
@@ -26,7 +29,10 @@ public class MovePlayer : MonoBehaviour
     {
         RotatePlayer();
         force = ThrowForce();
-        throwStrengthMask.gameObject.transform.localScale = new Vector3(1 - force, 1, 1);
+        //throwStrengthMask.gameObject.transform.localScale = new Vector3(1 - force, 1, 1);
+        throwStrengthMask.anchoredPosition = new Vector3(force * maskingForceMultiplayer - maskAndImageOffset, 40, 0);
+        throwStrengthImage.anchoredPosition = new Vector3(- force * maskingForceMultiplayer + maskAndImageOffset, 0, 0);
+        //throwStrengthImage.position = new Vector3(force - 1, 1, 1);
     }
 
     void RotatePlayer()
