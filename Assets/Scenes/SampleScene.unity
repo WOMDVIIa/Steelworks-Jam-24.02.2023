@@ -218,7 +218,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &75757204
 GameObject:
@@ -2030,7 +2030,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -871, y: -5}
+  m_AnchoredPosition: {x: -876, y: -5}
   m_SizeDelta: {x: 216, y: 1115.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &875802032
@@ -2225,7 +2225,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &901454229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2319,7 +2319,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &935249582
 GameObject:
@@ -2334,7 +2334,7 @@ GameObject:
   - component: {fileID: 935249584}
   - component: {fileID: 935249583}
   m_Layer: 0
-  m_Name: Trash Collector Outside
+  m_Name: Background Outside
   m_TagString: Collector
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2349,7 +2349,7 @@ BoxCollider:
   m_GameObject: {fileID: 935249582}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -2410,13 +2410,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 935249582}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 2.18, z: 0}
-  m_LocalScale: {x: 15.300299, y: 7.70218, z: 0.1}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
+  m_LocalPosition: {x: 0, y: 1.95, z: 0}
+  m_LocalScale: {x: 15.43, y: 7.70218, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 2132835267}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &938728161
 GameObject:
@@ -4153,7 +4153,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1511994621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4247,7 +4247,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1533692614
 GameObject:
@@ -4266,7 +4266,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1533692615
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4771,7 +4771,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 875, y: -5}
+  m_AnchoredPosition: {x: 884, y: -5}
   m_SizeDelta: {x: 216, y: 1115.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1636788109
@@ -5228,12 +5228,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxUnemployedWaiting: 10
   listOfWaitingUnemployed: []
-  statsDisplay: {fileID: 1633162709}
+  statsDisplay: {fileID: 1533692614}
   statsText:
-  - {fileID: 883277928}
-  - {fileID: 1175535698}
-  - {fileID: 1301112133}
-  unemployedPrefab: {fileID: 479197762042829870, guid: b2c5096c290cf4b4b8ff0c9ca35f6a41, type: 3}
+  - {fileID: 751167923}
+  - {fileID: 1258717383}
+  - {fileID: 2146766030}
+  unemployedPrefabs:
+  - {fileID: 479197762042829870, guid: b2c5096c290cf4b4b8ff0c9ca35f6a41, type: 3}
+  - {fileID: 479197762042829870, guid: 07e7843a55c5b5f4088becc6c6290507, type: 3}
   nextUnemployedTimer: 0
   unemployedCoordinates:
   - {x: -2.3, y: 2.4, z: 0}
@@ -5631,6 +5633,52 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5609859181802542749, guid: dbc8be91a7698784d963e22d52a7ab09, type: 3}
   m_PrefabInstance: {fileID: 1848795158}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2132835265
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2132835267}
+  - component: {fileID: 2132835266}
+  m_Layer: 0
+  m_Name: Trash Collector Outside
+  m_TagString: Collector
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &2132835266
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132835265}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20, y: 15, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &2132835267
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132835265}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 935249586}
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2146766028
 GameObject:
   m_ObjectHideFlags: 0

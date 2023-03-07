@@ -9,10 +9,10 @@ public class PersonStats : MonoBehaviour
 
     //GameObject statsDisplay;
     UnemployedHandling UnemployedHandlerObject;
-    float minWaitingForNextUnemployed = 10.0f;
-    float maxWaitingForNextUnemployed = 20.0f;
-    float minStats = 0.0f;
-    float maxStats = 3.0f;
+    float minWaitingForNextUnemployed = 2.0f;
+    float maxWaitingForNextUnemployed = 5.0f;
+    int minStats = 1;
+    int maxStats = 3;
     float waitingForJobTimer;
     float minWaitingTime = 50.0f;
     float maxWaitingTime = 60.0f;
@@ -59,7 +59,7 @@ public class PersonStats : MonoBehaviour
     {
         for (int i = 0; i < skillSet.Length; i++)
         {
-            skillSet[i] = Random.Range(minStats, maxStats);
+            skillSet[i] = Random.Range(minStats, maxStats + 1); //max exclusive
         }
 
         waitingForJobTimer = Random.Range(minWaitingTime, maxWaitingTime);

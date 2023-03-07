@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3208629691188135395}
   - component: {fileID: -1868101435063032941}
   m_Layer: 0
-  m_Name: Unemployed Person
+  m_Name: Unemployed Greek
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 697f8dce12e49194198ddf4ac020608d, type: 2}
+  - {fileID: 2100000, guid: cc0c88fb42eb8114bbc5f4ddc7058d71, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

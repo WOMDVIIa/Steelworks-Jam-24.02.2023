@@ -11,7 +11,8 @@ public class UnemployedHandling : MonoBehaviour
 
     [SerializeField] GameObject statsDisplay;
     [SerializeField] TextMeshProUGUI[] statsText;
-    [SerializeField] GameObject unemployedPrefab;
+    [SerializeField] GameObject[] unemployedPrefabs;
+    //[SerializeField] GameObject unemployedGreek;
     public float nextUnemployedTimer;
     public Vector3[] unemployedCoordinates;
     // Start is called before the first frame update
@@ -53,7 +54,8 @@ public class UnemployedHandling : MonoBehaviour
         int tempIndex = Random.Range(0, maxUnemployedWaiting);
         if (listOfWaitingUnemployed[tempIndex] == null)
         {
-            listOfWaitingUnemployed[tempIndex] = Instantiate(unemployedPrefab, unemployedCoordinates[tempIndex], unemployedPrefab.transform.rotation);
+            int nationIndex = Random.Range(0, unemployedPrefabs.Length);
+            listOfWaitingUnemployed[tempIndex] = Instantiate(unemployedPrefabs[nationIndex], unemployedCoordinates[tempIndex], unemployedPrefabs[nationIndex].transform.rotation);
         }
         else
         {
