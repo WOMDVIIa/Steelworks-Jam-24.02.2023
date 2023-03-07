@@ -114,3 +114,8 @@ MonoBehaviour:
   - 2
   - 2
   - 2
+  statsDisplay: {fileID: 0}
+  statsText:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

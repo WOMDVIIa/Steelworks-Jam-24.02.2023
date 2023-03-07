@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 
 public class PersonStats : MonoBehaviour
 {
     public float[] skillSet;
 
-    //GameObject statsDisplay;
+    [SerializeField] GameObject statsDisplay;
     UnemployedHandling UnemployedHandlerObject;
     float minWaitingForNextUnemployed = 2.0f;
     float maxWaitingForNextUnemployed = 5.0f;

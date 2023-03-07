@@ -12,7 +12,7 @@ public class UnemployedHandling : MonoBehaviour
     [SerializeField] GameObject statsDisplay;
     [SerializeField] TextMeshProUGUI[] statsText;
     [SerializeField] GameObject[] unemployedPrefabs;
-    //[SerializeField] GameObject unemployedGreek;
+
     public float nextUnemployedTimer;
     public Vector3[] unemployedCoordinates;
     // Start is called before the first frame update
