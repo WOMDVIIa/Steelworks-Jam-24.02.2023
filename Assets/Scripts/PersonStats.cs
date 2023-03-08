@@ -6,9 +6,12 @@ using TMPro;
 
 public class PersonStats : MonoBehaviour
 {
-    public float[] skillSet;
+    public static bool firstUnemployedSpawned = false;
+    
+    float[] skillSet;
 
     [SerializeField] GameObject statsDisplay;
+    [SerializeField] TextMeshProUGUI[] statsText;
     UnemployedHandling UnemployedHandlerObject;
     float minWaitingForNextUnemployed = 2.0f;
     float maxWaitingForNextUnemployed = 5.0f;
@@ -21,10 +24,19 @@ public class PersonStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //statsDisplay = GameObject.Find("SkillSetOfUnemployed");
         skillSet = new float[GameManager.instance.noOfPlaneTypes];
-        RandomStats();
-        SetUnemployedTimer();
+        if (!firstUnemployedSpawned)
+        {
+            StatsForFirstUnemployed();
+            firstUnemployedSpawned = true;
+            Debug.Log("Im here");
+        }
+        else
+        {
+            RandomStats();
+        }
+        waitingForJobTimer = Random.Range(minWaitingTime, maxWaitingTime);
+        SetNextUnemployedTimer();
     }
 
     // Update is called once per frame
@@ -41,16 +53,16 @@ public class PersonStats : MonoBehaviour
     {
         if (!GameManager.instance.planeMenuOn)
         {
-            UnemployedHandlerObject.DisplayStats(skillSet);
+            DisplayStats(skillSet);
         }
     }
 
     private void OnMouseExit()
     {
-        UnemployedHandlerObject.HideStats();
+        HideStats();
     }
 
-    void SetUnemployedTimer()
+    void SetNextUnemployedTimer()
     {
         UnemployedHandlerObject = GameObject.Find("Unemployed Grid").GetComponent<UnemployedHandling>();
         UnemployedHandlerObject.nextUnemployedTimer = Random.Range(minWaitingForNextUnemployed, maxWaitingForNextUnemployed);
@@ -61,9 +73,7 @@ public class PersonStats : MonoBehaviour
         for (int i = 0; i < skillSet.Length; i++)
         {
             skillSet[i] = Random.Range(minStats, maxStats + 1); //max exclusive
-        }
-
-        waitingForJobTimer = Random.Range(minWaitingTime, maxWaitingTime);
+        }        
     }
 
     public void StatsForFirstUnemployed()
@@ -72,5 +82,18 @@ public class PersonStats : MonoBehaviour
         {
             skillSet[i] = 2.0f;
         }
+    }
+
+    void DisplayStats(float[] skills)
+    {
+        statsDisplay.SetActive(true);
+        statsText[0].text = "Writing: " + System.Math.Round(skills[0], 1);
+        statsText[1].text = "Drawing: " + System.Math.Round(skills[1], 1);
+        statsText[2].text = "Maths: " + System.Math.Round(skills[2], 1);
+    }
+
+    void HideStats()
+    {
+        statsDisplay.SetActive(false);
     }
 }

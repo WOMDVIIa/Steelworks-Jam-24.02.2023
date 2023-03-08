@@ -9,20 +9,15 @@ public class UnemployedHandling : MonoBehaviour
     public int maxUnemployedWaiting = 10;
     public GameObject[] listOfWaitingUnemployed;
 
-    [SerializeField] GameObject statsDisplay;
-    [SerializeField] TextMeshProUGUI[] statsText;
     [SerializeField] GameObject[] unemployedPrefabs;
 
     public float nextUnemployedTimer;
     public Vector3[] unemployedCoordinates;
+
     // Start is called before the first frame update
     void Start()
     {
         listOfWaitingUnemployed = new GameObject[maxUnemployedWaiting];
-        listOfWaitingUnemployed[0] = GameObject.Find("Unemployed Person");
-        listOfWaitingUnemployed[0].GetComponent<PersonStats>().StatsForFirstUnemployed();
-        //unemployedCoordinates = new Vector3[maxUnemployedWaiting];
-
     }
 
     // Update is called once per frame
@@ -61,18 +56,5 @@ public class UnemployedHandling : MonoBehaviour
         {
             SpawnUnemployed();
         }
-    }
-
-    public void DisplayStats(float[] skills)
-    {
-        statsDisplay.SetActive(true);
-        statsText[0].text = "Writing: " + System.Math.Round(skills[0], 1);
-        statsText[1].text = "Drawing: " + System.Math.Round(skills[1], 1);
-        statsText[2].text = "Maths: " + System.Math.Round(skills[2], 1);
-    }
-
-    public void HideStats()
-    {
-        statsDisplay.SetActive(false);
     }
 }

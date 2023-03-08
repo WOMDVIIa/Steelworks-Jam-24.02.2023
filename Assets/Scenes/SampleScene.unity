@@ -5004,15 +5004,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxUnemployedWaiting: 10
   listOfWaitingUnemployed: []
-  statsDisplay: {fileID: 1533692614}
-  statsText:
-  - {fileID: 751167923}
-  - {fileID: 1258717383}
-  - {fileID: 2146766030}
   unemployedPrefabs:
   - {fileID: 479197762042829870, guid: b2c5096c290cf4b4b8ff0c9ca35f6a41, type: 3}
   - {fileID: 479197762042829870, guid: 07e7843a55c5b5f4088becc6c6290507, type: 3}
-  nextUnemployedTimer: 0
+  nextUnemployedTimer: 5
   unemployedCoordinates:
   - {x: -2.3, y: 2.4, z: 0}
   - {x: -2, y: 0, z: 0}
@@ -5598,12 +5593,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 1888921463}
     m_Modifications:
     - target: {fileID: -1868101435063032941, guid: b2c5096c290cf4b4b8ff0c9ca35f6a41, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1868101435063032941, guid: b2c5096c290cf4b4b8ff0c9ca35f6a41, type: 3}
       propertyPath: statsDisplay
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 479197762042829870, guid: b2c5096c290cf4b4b8ff0c9ca35f6a41, type: 3}
       propertyPath: m_Name
       value: Unemployed Person
+      objectReference: {fileID: 0}
+    - target: {fileID: 479197762042829870, guid: b2c5096c290cf4b4b8ff0c9ca35f6a41, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 701821103233210517, guid: b2c5096c290cf4b4b8ff0c9ca35f6a41, type: 3}
       propertyPath: m_RootOrder
