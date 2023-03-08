@@ -29,7 +29,6 @@ public class PersonStats : MonoBehaviour
         {
             StatsForFirstUnemployed();
             firstUnemployedSpawned = true;
-            Debug.Log("Im here");
         }
         else
         {
