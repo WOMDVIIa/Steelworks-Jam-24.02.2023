@@ -6,6 +6,7 @@ public class MovePlayer : MonoBehaviour
 {
 
     [SerializeField] GameObject planePrefab;
+
     [SerializeField] RectTransform throwStrengthImage;
     [SerializeField] RectTransform throwStrengthMask;
     float maskingForceMultiplayer = 97;
