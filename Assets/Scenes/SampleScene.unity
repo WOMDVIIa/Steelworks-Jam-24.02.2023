@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.1802834, g: 0.2257135, b: 0.3069223, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3192,34 +3192,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planeMenuOn: 0
-  planes: 
   maxOrdersPerType: 5
+  planes: 
   noOfPlaneTypes: 3
-  allPlanes:
+  allPlanesInPlaneMenu:
   - {fileID: 1966453056}
-  - {fileID: 1539555113}
   - {fileID: 420901193}
   - {fileID: 1508809875}
   - {fileID: 1842940005}
-  - {fileID: 1827934205}
-  - {fileID: 527076896}
-  - {fileID: 733556494}
-  - {fileID: 597377789}
-  - {fileID: 475279667}
+  - {fileID: 1539555113}
   - {fileID: 736374677}
   - {fileID: 1364743046}
   - {fileID: 974277996}
   - {fileID: 1190032766}
   - {fileID: 271982657}
+  - {fileID: 1827934205}
+  - {fileID: 527076896}
+  - {fileID: 733556494}
+  - {fileID: 597377789}
+  - {fileID: 475279667}
   - {fileID: 309034871}
   - {fileID: 2062292011}
   - {fileID: 221103460}
   - {fileID: 259395794}
   - {fileID: 1946537150}
-  selectedPlaneIndex: 0
-  difficulty: 2
   planeMenuObject: {fileID: 229901372}
   orderPrefab: {fileID: 7027700909643235423, guid: 143414cd89836074d99c8f3dfe6d2297, type: 3}
+  sellectedPlanePrefabs: []
+  selectedPlaneIndex: 0
 --- !u!4 &1024815365
 Transform:
   m_ObjectHideFlags: 0

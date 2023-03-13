@@ -6,18 +6,22 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public bool planeMenuOn = false;
-
-    public OrderInfo[][] activeOrdersTable;
-    public int [] planes;
+    public bool planeMenuOn = false;    
     public int maxOrdersPerType;
+    public int[] planes;
     public int noOfPlaneTypes;
-    public GameObject [] allPlanes;
-    public int selectedPlaneIndex;
-    public int difficulty = 2;
+    public GameObject[] allPlanesInPlaneMenu;
 
     [SerializeField] GameObject planeMenuObject;
     [SerializeField] GameObject orderPrefab;
+    [SerializeField] GameObject[] sellectedPlanePrefabs;
+
+
+    OrderInfo[][] activeOrdersTable; // public to check
+    public int selectedPlaneIndex;
+    
+
+    int difficulty = 2;     // temp to set single value of difficulty, will be changed to random
 
     private void Awake()
     {
@@ -55,17 +59,17 @@ public class GameManager : MonoBehaviour
 
     public void DeselectAll()
     {
-        for (int i = 0; i < allPlanes.Length; i++)
+        for (int i = 0; i < allPlanesInPlaneMenu.Length; i++)
         {
-            allPlanes[i].GetComponent<PlaneSelect>().Deselect();
+            allPlanesInPlaneMenu[i].GetComponent<PlaneSelect>().Deselect();
         }
     }
 
     public void FillSelectedPlaneIndex(GameObject activePlane)
     {
-        for (int i = 0; i < allPlanes.Length; i++)
+        for (int i = 0; i < allPlanesInPlaneMenu.Length; i++)
         {
-            if (activePlane == allPlanes[i])
+            if (activePlane == allPlanesInPlaneMenu[i])
             {
                 selectedPlaneIndex = i;
             }
