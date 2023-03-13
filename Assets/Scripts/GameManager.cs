@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+//using UnityEditor.UI;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject planeMenuObject;
     [SerializeField] GameObject orderPrefab;
     [SerializeField] GameObject[] sellectedPlanePrefabs;
+    [SerializeField] GameObject activePlaneImage;
 
 
     OrderInfo[][] activeOrdersTable; // public to check
@@ -74,6 +77,8 @@ public class GameManager : MonoBehaviour
                 selectedPlaneIndex = i;
             }
         }
+        //SetSellectedPlaneImage();
+        activePlaneImage.GetComponent<ChangeActivePlaneSprite>().ChangeSprite(selectedPlaneIndex);
     }
 
     public void CheckAndGenerateOrder()
