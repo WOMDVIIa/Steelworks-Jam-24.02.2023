@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class ChangeActivePlaneSprite : MonoBehaviour
 {
     [SerializeField] Sprite[] activePlanesSprites;
+    [SerializeField] GameObject orderIcon;
 
     Image thisImage;
+    Color fireColor = new Color(0.8f, 0.35f, 0.35f);
 
     // Start is called before the first frame update
     void Start()
@@ -23,13 +25,32 @@ public class ChangeActivePlaneSprite : MonoBehaviour
 
     public void ChangeSprite(int index)
     {
-        if (index < 2)
+        if (index == 0)
         {
-            thisImage.sprite = activePlanesSprites[0];
+            thisImage.color = fireColor;
         }
         else
         {
+            thisImage.color = Color.white;
+        }
+
+        orderIcon.SetActive(true);
+        if (index < 5)
+        {
+            thisImage.sprite = activePlanesSprites[index];
+            orderIcon.SetActive(false);
+        }
+        else if (index < 10) // <5;9>
+        {
             thisImage.sprite = activePlanesSprites[1];
+        }
+        else if (index < 15) // <10;14>
+        {
+            thisImage.sprite = activePlanesSprites[2];
+        }
+        else // <15;19>
+        {
+            thisImage.sprite = activePlanesSprites[3];
         }
     }
 }
