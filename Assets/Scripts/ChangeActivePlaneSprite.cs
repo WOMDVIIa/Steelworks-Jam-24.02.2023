@@ -10,6 +10,7 @@ public class ChangeActivePlaneSprite : MonoBehaviour
 
     Image thisImage;
     Color fireColor = new Color(0.8f, 0.35f, 0.35f);
+    Color hireColor = new Color(0.35f, 0.8f, 0.35f);
 
     // Start is called before the first frame update
     void Start()
@@ -52,5 +53,12 @@ public class ChangeActivePlaneSprite : MonoBehaviour
         {
             thisImage.sprite = activePlanesSprites[3];
         }
+    }
+
+    public void ChaneToHireSprite()
+    {
+        thisImage.sprite = activePlanesSprites[0];
+        thisImage.color = hireColor;
+        orderIcon.SetActive(false);
     }
 }

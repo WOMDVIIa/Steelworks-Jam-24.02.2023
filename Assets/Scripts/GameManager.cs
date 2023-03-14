@@ -13,11 +13,11 @@ public class GameManager : MonoBehaviour
     public int[] planes;
     public int noOfPlaneTypes;
     public GameObject[] allPlanesInPlaneMenu;
+    public GameObject activePlaneImage;
 
     [SerializeField] GameObject planeMenuObject;
     [SerializeField] GameObject orderPrefab;
     [SerializeField] GameObject[] sellectedPlanePrefabs;
-    [SerializeField] GameObject activePlaneImage;
 
 
     OrderInfo[][] activeOrdersTable; // public to check

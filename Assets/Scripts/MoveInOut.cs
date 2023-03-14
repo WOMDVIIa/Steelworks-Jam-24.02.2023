@@ -56,11 +56,14 @@ public class MoveInOut : MonoBehaviour, IPointerClickHandler
         {
             leftBanner.SetActive(true);
             rightBanner.SetActive(false);
+            GameManager.instance.activePlaneImage.GetComponent<ChangeActivePlaneSprite>().ChangeSprite(GameManager.instance.selectedPlaneIndex);
+
         }
         else
         {
             rightBanner.SetActive(true);
             leftBanner.SetActive(false);
+            GameManager.instance.activePlaneImage.GetComponent<ChangeActivePlaneSprite>().ChaneToHireSprite();
         }
     }
 }
