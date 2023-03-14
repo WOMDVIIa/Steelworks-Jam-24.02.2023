@@ -3218,10 +3218,10 @@ MonoBehaviour:
   - {fileID: 221103460}
   - {fileID: 259395794}
   - {fileID: 1946537150}
+  activePlaneImage: {fileID: 1848431768}
   planeMenuObject: {fileID: 229901372}
   orderPrefab: {fileID: 7027700909643235423, guid: 143414cd89836074d99c8f3dfe6d2297, type: 3}
   sellectedPlanePrefabs: []
-  activePlaneImage: {fileID: 1848431768}
   selectedPlaneIndex: 0
 --- !u!4 &1024815365
 Transform:
@@ -5402,7 +5402,7 @@ GameObject:
   - component: {fileID: 1700838163}
   m_Layer: 0
   m_Name: Trash Collector Inside
-  m_TagString: Collector
+  m_TagString: Builder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5428,7 +5428,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700838162}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18, y: 0, z: 1}
+  m_LocalPosition: {x: 18, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5693,7 +5693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.35, g: 0.8, b: 0.35, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6070,7 +6070,7 @@ GameObject:
   - component: {fileID: 1894340358}
   m_Layer: 0
   m_Name: Pitagoras
-  m_TagString: Untagged
+  m_TagString: Builder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6864,7 +6864,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2132835265}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
