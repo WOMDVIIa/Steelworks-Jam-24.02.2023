@@ -8,7 +8,8 @@ using UnityEngine.UIElements;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public bool planeMenuOn = false;    
+    public bool planeMenuOn = false;
+    public bool playerInside = false;
     public int maxOrdersPerType;
     public int[] planes;
     public int noOfPlaneTypes;

@@ -28,12 +28,13 @@ public class MovePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RotatePlayer();
-        force = ThrowForce();
-        //throwStrengthMask.gameObject.transform.localScale = new Vector3(1 - force, 1, 1);
-        throwStrengthMask.anchoredPosition = new Vector3(force * maskingForceMultiplayer - maskAndImageOffset, 40, 0);
-        throwStrengthImage.anchoredPosition = new Vector3(- force * maskingForceMultiplayer + maskAndImageOffset, 0, 0);
-        //throwStrengthImage.position = new Vector3(force - 1, 1, 1);
+        if (!GameManager.instance.planeMenuOn)
+        {
+            RotatePlayer();
+            force = ThrowForce();
+            throwStrengthMask.anchoredPosition = new Vector3(force * maskingForceMultiplayer - maskAndImageOffset, 40, 0);
+            throwStrengthImage.anchoredPosition = new Vector3(- force * maskingForceMultiplayer + maskAndImageOffset, 0, 0);
+        }
     }
 
     void RotatePlayer()

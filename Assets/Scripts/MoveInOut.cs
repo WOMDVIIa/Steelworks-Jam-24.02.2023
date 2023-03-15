@@ -15,7 +15,10 @@ public class MoveInOut : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        StartCoroutine(SingleFrameDelay());
+        if (!GameManager.instance.planeMenuOn)
+        {
+            StartCoroutine(SingleFrameDelay());
+        }
     }
 
     IEnumerator SingleFrameDelay()
@@ -52,13 +55,14 @@ public class MoveInOut : MonoBehaviour, IPointerClickHandler
             leftBanner.SetActive(true);
             rightBanner.SetActive(false);
             GameManager.instance.activePlaneImage.GetComponent<ChangeActivePlaneSprite>().ChangeSprite(GameManager.instance.selectedPlaneIndex);
-
+            GameManager.instance.playerInside = true;
         }
         else
         {
             rightBanner.SetActive(true);
             leftBanner.SetActive(false);
             GameManager.instance.activePlaneImage.GetComponent<ChangeActivePlaneSprite>().ChaneToHireSprite();
+            GameManager.instance.playerInside = false;
         }
     }
 }
