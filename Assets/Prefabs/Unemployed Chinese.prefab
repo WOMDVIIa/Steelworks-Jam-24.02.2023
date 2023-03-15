@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 548117468889016798}
   - component: {fileID: 8609303597176227915}
   - component: {fileID: 3208629691188135395}
-  - component: {fileID: -1868101435063032941}
+  - component: {fileID: 3636131363708790278}
   m_Layer: 0
   m_Name: Unemployed Chinese
   m_TagString: Untagged
@@ -99,7 +99,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-1868101435063032941
+--- !u!114 &3636131363708790278
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 479197762042829870}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1cdc2454ddd747439e19e80050f7994, type: 3}
+  m_Script: {fileID: 11500000, guid: 1172bce4537fddc4b8d9f59e882d3548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   statsDisplay: {fileID: 7342538334748350547}
