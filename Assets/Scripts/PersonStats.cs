@@ -7,19 +7,16 @@ using TMPro;
 public class PersonStats : MonoBehaviour
 {
     public static bool firstUnemployedSpawned = false;
-    
-    float[] skillSet;
+    static float minWaitingTime = 50.0f;
+    static float maxWaitingTime = 60.0f;
+    static int minStats = 1;
+    static int maxStats = 3;    
 
     [SerializeField] GameObject statsDisplay;
     [SerializeField] TextMeshProUGUI[] statsText;
-    UnemployedHandling UnemployedHandlerObject;
-    float minWaitingForNextUnemployed = 2.0f;
-    float maxWaitingForNextUnemployed = 5.0f;
-    int minStats = 1;
-    int maxStats = 3;
+
     float waitingForJobTimer;
-    float minWaitingTime = 50.0f;
-    float maxWaitingTime = 60.0f;
+    float[] skillSet;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +32,7 @@ public class PersonStats : MonoBehaviour
             RandomStats();
         }
         waitingForJobTimer = Random.Range(minWaitingTime, maxWaitingTime);
-        SetNextUnemployedTimer();
+        //SetNextUnemployedTimer();
     }
 
     // Update is called once per frame
@@ -59,12 +56,6 @@ public class PersonStats : MonoBehaviour
     private void OnMouseExit()
     {
         HideStats();
-    }
-
-    void SetNextUnemployedTimer()
-    {
-        UnemployedHandlerObject = GameObject.Find("Unemployed Grid").GetComponent<UnemployedHandling>();
-        UnemployedHandlerObject.nextUnemployedTimer = Random.Range(minWaitingForNextUnemployed, maxWaitingForNextUnemployed);
     }
 
     void RandomStats()

@@ -49,9 +49,6 @@ public class GameManager : MonoBehaviour
     void CreatePlanesOrdersTables()
     {
         planes = new int[noOfPlaneTypes];
-        //planes[0] = 0;  //iloœæ czekaj¹cych zamówieñ danego typu (ta wartoœæ bêdzie gdzie indziej zmieniana, tu dodana do testów)
-        //planes[1] = 0;
-        //planes[2] = 0;
 
         activeOrdersTable = new OrderInfo[noOfPlaneTypes][];
         for (int i = 0; i < noOfPlaneTypes; i++)

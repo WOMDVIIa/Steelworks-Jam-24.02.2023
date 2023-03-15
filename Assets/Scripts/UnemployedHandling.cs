@@ -14,6 +14,9 @@ public class UnemployedHandling : MonoBehaviour
     public float nextUnemployedTimer;
     public Vector3[] unemployedCoordinates;
 
+    float minWaitingForNextUnemployed = 2.0f;
+    float maxWaitingForNextUnemployed = 5.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +54,7 @@ public class UnemployedHandling : MonoBehaviour
         {
             int nationIndex = Random.Range(0, unemployedPrefabs.Length);
             listOfWaitingUnemployed[tempIndex] = Instantiate(unemployedPrefabs[nationIndex], unemployedCoordinates[tempIndex], unemployedPrefabs[nationIndex].transform.rotation);
+            nextUnemployedTimer = Random.Range(minWaitingForNextUnemployed, maxWaitingForNextUnemployed);
         }
         else
         {

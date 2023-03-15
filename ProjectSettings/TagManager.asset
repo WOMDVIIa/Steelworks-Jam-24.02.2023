@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Collector
   - Builder
+  - Empty Table
   layers:
   - Default
   - TransparentFX

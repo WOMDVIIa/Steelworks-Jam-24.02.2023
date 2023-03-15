@@ -23,7 +23,6 @@ public class PlaneFlight : MonoBehaviour
         if (ownRb.velocity.magnitude < destroyVelocityThreshold && lifeDuration > 1)
         {
             ownRb.AddForce(Vector3.forward * 1000);
-            //Destroy(gameObject);
         }
     }
 
@@ -31,13 +30,13 @@ public class PlaneFlight : MonoBehaviour
     {
         Destroy(gameObject);
 
-        if (collision.gameObject.CompareTag("Builder"))
-        {
-        
-        }
-        else if (!collision.gameObject.CompareTag("Collector"))
-        {
-            Destroy(collision.gameObject);        
-        }
+        //if (collision.gameObject.CompareTag("Builder"))
+        //{
+            
+        //}
+        //else if (!collision.gameObject.CompareTag("Collector"))
+        //{
+        //    Destroy(collision.gameObject);        
+        //}
     }
 }
