@@ -8,18 +8,6 @@ public class ShowRightPlanes : MonoBehaviour
     [SerializeField] GameObject[] drawPlanes;
     [SerializeField] GameObject[] mathPlanes;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void ShowPlanes()
     {
         for (int i = 0; i < GameManager.instance.maxOrdersPerType; i++)

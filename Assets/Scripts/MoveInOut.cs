@@ -13,11 +13,6 @@ public class MoveInOut : MonoBehaviour, IPointerClickHandler
     [SerializeField] GameObject objectToMove;
     float frameJumpMultiplayer = 100;
 
-    //private void OnMouseDown()
-    //{
-    //    StartCoroutine(SingleFrameDelay());        
-    //}
-
     public void OnPointerClick(PointerEventData eventData)
     {
         StartCoroutine(SingleFrameDelay());

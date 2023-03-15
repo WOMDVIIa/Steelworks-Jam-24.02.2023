@@ -12,6 +12,7 @@ public class UnemployedPerson : PersonStats
 
     float waitingForJobTimer;
     [SerializeField] GameObject hiredPrefab;
+    Vector3 hiredLocation = new Vector3(1.4f, -3, 0);
 
     // Start is called before the first frame update
     void Start()
@@ -58,9 +59,8 @@ public class UnemployedPerson : PersonStats
         {
             Destroy(GameManager.instance.hiredPerson);
         }
-        GameManager.instance.hiredPerson = Instantiate(hiredPrefab);
+        GameManager.instance.hiredPerson = Instantiate(hiredPrefab, hiredLocation, transform.rotation);
         GameManager.instance.hiredPersonSkillSet = skillSet;
         Destroy(gameObject);
     }
-
 }

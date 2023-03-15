@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     public float[] hiredPersonSkillSet;
     public GameObject hiredPerson;
 
-    [SerializeField] GameObject planeMenuObject;
     [SerializeField] GameObject orderPrefab;
     [SerializeField] GameObject[] sellectedPlanePrefabs;
 
@@ -41,12 +40,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void CreatePlanesOrdersTables()
@@ -122,21 +115,6 @@ public class GameManager : MonoBehaviour
         for (int i = 1; i < maxOrdersPerType; i++)
         {
             activeOrdersTable[index][i - 1] = activeOrdersTable[index][i];
-        }
-    }
-
-    public void TogglePlaneMenu()
-    {
-        if (planeMenuObject.activeSelf)
-        {
-            planeMenuObject.SetActive(false);
-            planeMenuOn = false;
-        }
-        else
-        {
-            planeMenuObject.SetActive(true);
-            planeMenuObject.GetComponent<ShowRightPlanes>().ShowPlanes();
-            planeMenuOn = true;
         }
     }
 
