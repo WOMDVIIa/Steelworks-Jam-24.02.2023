@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.1802834, g: 0.2257135, b: 0.3069223, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3219,6 +3219,8 @@ MonoBehaviour:
   - {fileID: 259395794}
   - {fileID: 1946537150}
   activePlaneImage: {fileID: 1848431768}
+  hiredPersonSkillSet: []
+  hiredPerson: {fileID: 0}
   planeMenuObject: {fileID: 229901372}
   orderPrefab: {fileID: 7027700909643235423, guid: 143414cd89836074d99c8f3dfe6d2297, type: 3}
   sellectedPlanePrefabs: []
@@ -5400,7 +5402,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1700838164}
   - component: {fileID: 1700838163}
-  - component: {fileID: 1700838165}
   m_Layer: 0
   m_Name: Trash Collector Inside
   m_TagString: Builder
@@ -5437,19 +5438,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1700838165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1700838162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46e06143fcf801246a5a4f1df2bf6904, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jobSlot: {fileID: 0}
 --- !u!1001 &1705955343
 PrefabInstance:
   m_ObjectHideFlags: 0

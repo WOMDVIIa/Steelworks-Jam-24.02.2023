@@ -11,7 +11,7 @@ public class UnemployedPerson : PersonStats
     static int maxStats = 3;
 
     float waitingForJobTimer;
-
+    [SerializeField] GameObject hiredPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +27,6 @@ public class UnemployedPerson : PersonStats
             RandomStats();
         }
         waitingForJobTimer = Random.Range(minWaitingTime, maxWaitingTime);
-        //SetNextUnemployedTimer();
     }
 
     // Update is called once per frame
@@ -39,7 +38,7 @@ public class UnemployedPerson : PersonStats
             Destroy(gameObject);
         }
     }
-    public void StatsForFirstUnemployed()
+    void StatsForFirstUnemployed()
     {
         for (int i = 0; i < skillSet.Length; i++)
         {
@@ -53,4 +52,15 @@ public class UnemployedPerson : PersonStats
             skillSet[i] = Random.Range(minStats, maxStats + 1); //max exclusive
         }
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (GameManager.instance.hiredPerson != null)
+        {
+            Destroy(GameManager.instance.hiredPerson);
+        }
+        GameManager.instance.hiredPerson = Instantiate(hiredPrefab);
+        GameManager.instance.hiredPersonSkillSet = skillSet;
+        Destroy(gameObject);
+    }
+
 }

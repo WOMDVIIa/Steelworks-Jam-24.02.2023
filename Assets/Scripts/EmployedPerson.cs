@@ -2,24 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EmployedHandling : MonoBehaviour
+public class EmployedPerson : PersonStats
 {
-    [SerializeField] GameObject jobSlot;
-
     // Start is called before the first frame update
     void Start()
     {
-        
+        skillSet = GameManager.instance.hiredPersonSkillSet;
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    }
-
-    public void CreateJobSlot()
-    {
-        Instantiate(jobSlot);
     }
 }

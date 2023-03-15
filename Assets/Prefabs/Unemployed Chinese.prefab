@@ -116,6 +116,7 @@ MonoBehaviour:
   - {fileID: 8486517724642008944}
   - {fileID: 5167212724875526272}
   - {fileID: 3968116523262160442}
+  hiredPrefab: {fileID: 7446853728782855780, guid: 6aec1186fb8cfe94e887529b3ae5b5ce, type: 3}
 --- !u!1 &745059609989130527
 GameObject:
   m_ObjectHideFlags: 0

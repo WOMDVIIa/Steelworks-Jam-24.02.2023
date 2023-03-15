@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public int noOfPlaneTypes;
     public GameObject[] allPlanesInPlaneMenu;
     public GameObject activePlaneImage;
+    public float[] hiredPersonSkillSet;
+    public GameObject hiredPerson;
 
     [SerializeField] GameObject planeMenuObject;
     [SerializeField] GameObject orderPrefab;
@@ -33,6 +35,7 @@ public class GameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
             CreatePlanesOrdersTables();
+            hiredPersonSkillSet = new float[noOfPlaneTypes];
         }
         else
         {
