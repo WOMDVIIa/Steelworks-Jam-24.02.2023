@@ -465,7 +465,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &229901373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3061,7 +3061,7 @@ MonoBehaviour:
   planeMenuOn: 0
   playerInside: 0
   maxOrdersPerType: 5
-  planes: 
+  activeOrders: 
   noOfPlaneTypes: 3
   allPlanesInPlaneMenu:
   - {fileID: 1966453056}

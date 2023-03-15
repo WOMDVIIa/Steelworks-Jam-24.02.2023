@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public bool planeMenuOn = false;
     public bool playerInside = false;
     public int maxOrdersPerType;
-    public int[] planes;
+    public int[] activeOrders;
     public int noOfPlaneTypes;
     public GameObject[] allPlanesInPlaneMenu;
     public GameObject activePlaneImage;
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
 
     void CreatePlanesOrdersTables()
     {
-        planes = new int[noOfPlaneTypes];
+        activeOrders = new int[noOfPlaneTypes];
 
         activeOrdersTable = new OrderInfo[noOfPlaneTypes][];
         for (int i = 0; i < noOfPlaneTypes; i++)
@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
     public void CheckAndGenerateOrder()
     {
         int generatedOrderIndex = Random.Range(0, noOfPlaneTypes);
-        if (planes[generatedOrderIndex] == maxOrdersPerType)
+        if (activeOrders[generatedOrderIndex] == maxOrdersPerType)
         {
             DestroyFirstOrder(generatedOrderIndex);
             SwapOrdersUp(generatedOrderIndex);
@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            GenerateOrder(generatedOrderIndex, planes[generatedOrderIndex]);
+            GenerateOrder(generatedOrderIndex, activeOrders[generatedOrderIndex]);
         }        
     }
 
@@ -97,9 +97,9 @@ public class GameManager : MonoBehaviour
         activeOrdersTable[index][newPlaneNumber].orderTypeIndex = index;
         activeOrdersTable[index][newPlaneNumber].orderDifficulty = difficulty;
 
-        if (planes[index] < maxOrdersPerType)
+        if (activeOrders[index] < maxOrdersPerType)
         {
-            planes[index]++;
+            activeOrders[index]++;
         }
         //PrintOrders();
     }

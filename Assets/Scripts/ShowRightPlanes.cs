@@ -12,17 +12,17 @@ public class ShowRightPlanes : MonoBehaviour
     {
         for (int i = 0; i < GameManager.instance.maxOrdersPerType; i++)
         {
-            if (i < GameManager.instance.planes[0])
+            if (i < GameManager.instance.activeOrders[0])
             {
                 writePlanes[i].SetActive(true);
             }
 
-            if (i < GameManager.instance.planes[1])
+            if (i < GameManager.instance.activeOrders[1])
             {
                 drawPlanes[i].SetActive(true);
             }
 
-            if (i < GameManager.instance.planes[2])
+            if (i < GameManager.instance.activeOrders[2])
             {
                 mathPlanes[i].SetActive(true);
             }
