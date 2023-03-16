@@ -15,7 +15,7 @@ public class MoveInOut : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (!GameManager.instance.planeMenuOn)
+        if (!GameManager.instance.planeMenu.activeSelf)
         {
             StartCoroutine(SingleFrameDelay());
         }

@@ -28,7 +28,7 @@ public class MovePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GameManager.instance.planeMenuOn)
+        if (!GameManager.instance.planeMenu.activeSelf)
         {
             RotatePlayer();
             force = ThrowForce();

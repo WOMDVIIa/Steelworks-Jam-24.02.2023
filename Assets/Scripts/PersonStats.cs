@@ -18,7 +18,7 @@ public class PersonStats : MonoBehaviour
 
     protected void OnMouseOver()
     {
-        if (!GameManager.instance.planeMenuOn)
+        if (!GameManager.instance.planeMenu.activeSelf)
         {
             DisplayStats(skillSet);
         }

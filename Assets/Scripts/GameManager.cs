@@ -8,7 +8,6 @@ using UnityEngine.UIElements;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public bool planeMenuOn = false;
     public bool playerInside = false;
     public int maxOrdersPerType;
     public int[] activeOrders;
@@ -17,6 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject activePlaneImage;
     public float[] hiredPersonSkillSet;
     public GameObject hiredPerson;
+    public GameObject planeMenu;
 
     [SerializeField] GameObject orderPrefab;
     [SerializeField] GameObject[] sellectedPlanePrefabs;
@@ -54,6 +54,27 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //public void ShowPlanes()
+    //{
+    //    for (int i = 5; i < allPlanesInPlaneMenu.Length; i++)
+    //    {
+    //        if (i < activeOrders[0])
+    //        {
+    //            allPlanesInPlaneMenu[i].SetActive(true);
+    //        }
+
+    //        if (i < GameManager.instance.activeOrders[1])
+    //        {
+    //            allPlanesInPlaneMenu[i].SetActive(true);
+    //        }
+
+    //        if (i < GameManager.instance.activeOrders[2])
+    //        {
+    //            allPlanesInPlaneMenu[i].SetActive(true);
+    //        }
+    //    }
+    //}
+
     public void DeselectAll()
     {
         for (int i = 0; i < allPlanesInPlaneMenu.Length; i++)
@@ -71,7 +92,6 @@ public class GameManager : MonoBehaviour
                 selectedPlaneIndex = i;
             }
         }
-        //SetSellectedPlaneImage();
         activePlaneImage.GetComponent<ChangeActivePlaneSprite>().ChangeSprite(selectedPlaneIndex);
     }
 
