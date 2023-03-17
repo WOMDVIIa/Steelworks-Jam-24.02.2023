@@ -12,7 +12,9 @@ public class GameManager : MonoBehaviour
     public int maxOrdersPerType;
     public int[] activeOrders;
     public int noOfPlaneTypes;
-    public GameObject[] allPlanesInPlaneMenu;
+    //public GameObject[] allPlanesInPlaneMenu;   // to remove
+    public GameObject[] stuffPlanesInPlaneMenu;
+    public GameObject[][] orderPlanesInPlaneMenu;
     public GameObject activePlaneImage;
     public float[] hiredPersonSkillSet;
     public GameObject hiredPerson;
@@ -34,7 +36,8 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            CreatePlanesOrdersTables();
+            CreateOrdersTables();
+            FillOrderPlanesTable();
             hiredPersonSkillSet = new float[noOfPlaneTypes];
         }
         else
@@ -43,55 +46,105 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void CreatePlanesOrdersTables()
+    void CreateOrdersTables()
     {
         activeOrders = new int[noOfPlaneTypes];
 
         activeOrdersTable = new OrderInfo[noOfPlaneTypes][];
+        orderPlanesInPlaneMenu = new GameObject[noOfPlaneTypes][];
         for (int i = 0; i < noOfPlaneTypes; i++)
         {
             activeOrdersTable[i] = new OrderInfo[maxOrdersPerType];
+            orderPlanesInPlaneMenu[i] = new GameObject[maxOrdersPerType];
         }
     }
 
-    //public void ShowPlanes()
-    //{
-    //    for (int i = 5; i < allPlanesInPlaneMenu.Length; i++)
-    //    {
-    //        if (i < activeOrders[0])
-    //        {
-    //            allPlanesInPlaneMenu[i].SetActive(true);
-    //        }
+    void FillOrderPlanesTable()
+    {
+        if (!planeMenu.activeSelf)
+        {
+            planeMenu.SetActive(true);
+        }
 
-    //        if (i < GameManager.instance.activeOrders[1])
-    //        {
-    //            allPlanesInPlaneMenu[i].SetActive(true);
-    //        }
+        for (int i = 0; i < noOfPlaneTypes; i++)
+        {
+            string tempPlaneName = "";
 
-    //        if (i < GameManager.instance.activeOrders[2])
-    //        {
-    //            allPlanesInPlaneMenu[i].SetActive(true);
-    //        }
-    //    }
-    //}
+            switch (i)
+            {
+                case 2:
+                    tempPlaneName = "Math";
+                    break;
+
+                case 1:
+                    tempPlaneName = "Write";
+                    break;
+
+                case 0:
+                    tempPlaneName = "Draw";
+                    break;
+            }
+
+            //Debug.Log(tempPlaneName);
+
+            for (int j = 0; j < maxOrdersPerType; j++)
+            {
+                orderPlanesInPlaneMenu[i][j] = GameObject.Find(tempPlaneName + j);
+                orderPlanesInPlaneMenu[i][j].SetActive(false);
+            }
+        }
+        planeMenu.SetActive(false);
+    }
+
+    public void ShowRightOrderPlanes()
+    {
+        for (int i = 0; i < noOfPlaneTypes; i++)
+        {
+            for (int j = 0; j < maxOrdersPerType; j++)
+            {
+                if (j < activeOrders[i])
+                orderPlanesInPlaneMenu[i][j].SetActive(true);
+            }
+        }
+    }
 
     public void DeselectAll()
     {
-        for (int i = 0; i < allPlanesInPlaneMenu.Length; i++)
+        for (int i = 0; i < stuffPlanesInPlaneMenu.Length; i++)
         {
-            allPlanesInPlaneMenu[i].GetComponent<PlaneSelect>().Deselect();
+            stuffPlanesInPlaneMenu[i].GetComponent<PlaneSelect>().Deselect();
+        }
+
+        for (int i = 0; i < noOfPlaneTypes; i++)
+        {
+            for (int j = 0; j < maxOrdersPerType; j++)
+            {
+                orderPlanesInPlaneMenu[i][j].GetComponent<PlaneSelect>().Deselect();
+            }
         }
     }
 
     public void FillSelectedPlaneIndex(GameObject activePlane)
     {
-        for (int i = 0; i < allPlanesInPlaneMenu.Length; i++)
+        for (int i = 0; i < stuffPlanesInPlaneMenu.Length; i++)
         {
-            if (activePlane == allPlanesInPlaneMenu[i])
+            if (activePlane == stuffPlanesInPlaneMenu[i])
             {
                 selectedPlaneIndex = i;
             }
         }
+
+        for (int i = 0; i < noOfPlaneTypes; i++)
+        {
+            for (int j = 0; j < maxOrdersPerType; j++)
+            {
+                if (activePlane == orderPlanesInPlaneMenu[i][j])
+                {
+                    selectedPlaneIndex = 10 * (1 + i) + j;
+                }
+            }
+        }
+
         activePlaneImage.GetComponent<ChangeActivePlaneSprite>().ChangeSprite(selectedPlaneIndex);
     }
 

@@ -11,11 +11,6 @@ public class PersonStats : MonoBehaviour
 
     protected float[] skillSet;
 
-    //protected void Start()
-    //{
-    //    playerWithCameraObject = GameObject.Find("Player with Camera");
-    //}
-
     protected void OnMouseOver()
     {
         if (!GameManager.instance.planeMenu.activeSelf)
