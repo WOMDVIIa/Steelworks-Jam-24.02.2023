@@ -45,7 +45,7 @@ public class MoveInOut : MonoBehaviour, IPointerClickHandler
 
     void MoveToFixedPosition()
     {
-        objectToMove.transform.position = new Vector3(destinationX, 1, -2);
+        objectToMove.transform.position = new Vector3(destinationX, 1, -5);
     }
 
     void ToggleBannersVisibitily()

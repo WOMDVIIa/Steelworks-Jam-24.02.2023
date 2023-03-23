@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class PlaneFlight : MonoBehaviour
 {
-    float instantiateTime;
-    float destroyVelocityThreshold = 0.1f;
+    protected float instantiateTime;
+    protected float destroyVelocityThreshold = 0.1f;
 
-    Rigidbody ownRb;
+    protected Rigidbody ownRb;
 
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
         instantiateTime = Time.time;
         ownRb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         float lifeDuration = Time.time - instantiateTime;
         if (ownRb.velocity.magnitude < destroyVelocityThreshold && lifeDuration > 1)

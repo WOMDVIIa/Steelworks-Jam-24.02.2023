@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovePlayer : MonoBehaviour
 {
 
-    [SerializeField] GameObject planePrefab;
+    [SerializeField] GameObject[] planePrefabs;
 
     [SerializeField] RectTransform throwStrengthImage;
     [SerializeField] RectTransform throwStrengthMask;
@@ -19,6 +19,7 @@ public class MovePlayer : MonoBehaviour
     float rotationMultiplayer = 50;
 
     GameObject newPlane;
+    int newDeskIndexInPlaneMenu = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,11 +44,29 @@ public class MovePlayer : MonoBehaviour
         gameObject.transform.Rotate(Vector3.back, horizontalInput * rotationMultiplayer * Time.deltaTime);
     }
 
-    void ThrowPlane(float force)
+    void ThrowPlane(/*float force*/)
     {
-        newPlane = Instantiate(planePrefab, transform.position, transform.rotation);
-        newPlane.GetComponent<Rigidbody>().AddRelativeForce(Vector3.up * (1 + force) * forceMultiplayer, ForceMode.Impulse);
-        force = 0;
+        if (!GameManager.instance.playerInside)
+        {
+            newPlane = Instantiate(planePrefabs[0], transform.position, transform.rotation);
+            AddForceToPlane(newPlane);
+            //newPlane.GetComponent<Rigidbody>().AddRelativeForce(Vector3.up * (1 + force) * forceMultiplayer, ForceMode.Impulse);
+        }
+        else
+        {
+            if (GameManager.instance.selectedPlaneIndex == newDeskIndexInPlaneMenu)
+            {
+                newPlane = Instantiate(planePrefabs[1], transform.position, transform.rotation);
+                AddForceToPlane(newPlane);
+            }
+
+        }
+        //force = 0;
+    }
+
+    void AddForceToPlane(GameObject plane)
+    {
+        plane.GetComponent<Rigidbody>().AddRelativeForce(Vector3.up * (1 + force) * forceMultiplayer, ForceMode.Impulse);
     }
 
     float ThrowForce()
@@ -58,7 +77,7 @@ public class MovePlayer : MonoBehaviour
         }
         else if (sinArgument != 0)
         {
-            ThrowPlane(force);
+            ThrowPlane(/*force*/);
             sinArgument = 0;
         }
         return Mathf.Sin(sinArgument) * Mathf.Sin(sinArgument);
