@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     
 
     int difficulty = 2;     // temp to set single value of difficulty, will be changed to random
-    int assignPlaneIndex = 1;
+    int assignPlaneIndex = 1; // index in stuffPlanesInPlaneMenu table
 
     private void Awake()
     {
