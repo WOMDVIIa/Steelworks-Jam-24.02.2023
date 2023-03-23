@@ -36,22 +36,22 @@ public class ChangeActivePlaneSprite : MonoBehaviour
         }
 
         orderIcon.SetActive(true);
-        if (index < 5)
+        if (index < activePlanesSprites.Length)
         {
             thisImage.sprite = activePlanesSprites[index];
             orderIcon.SetActive(false);
         }
-        else if (index < 10) // <5;9>
-        {
-            thisImage.sprite = activePlanesSprites[1];
-        }
-        else if (index < 15) // <10;14>
+        else if (index < 20) // <10;14>
         {
             thisImage.sprite = activePlanesSprites[2];
         }
-        else // <15;19>
+        else if (index < 30) // <20;24>
         {
             thisImage.sprite = activePlanesSprites[3];
+        }
+        else // <30;34>
+        {
+            thisImage.sprite = activePlanesSprites[4];
         }
     }
 
