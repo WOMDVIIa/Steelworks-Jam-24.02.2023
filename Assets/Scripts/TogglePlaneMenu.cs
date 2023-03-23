@@ -11,12 +11,13 @@ public class TogglePlaneMenu : MonoBehaviour, IPointerClickHandler
     {
         if (planeMenuObject.activeSelf)
         {
+            GameManager.instance.HideConditionalPlanse();
             planeMenuObject.SetActive(false);
         }
         else
         {
             planeMenuObject.SetActive(true);
-            GameManager.instance.ShowRightOrderPlanes();
+            GameManager.instance.ShowRightPlanesInMenu();
         }
     }
 }

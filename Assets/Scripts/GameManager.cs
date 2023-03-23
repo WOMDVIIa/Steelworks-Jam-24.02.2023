@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     
 
     int difficulty = 2;     // temp to set single value of difficulty, will be changed to random
+    int assignPlaneIndex = 1;
 
     private void Awake()
     {
@@ -90,21 +91,43 @@ public class GameManager : MonoBehaviour
             for (int j = 0; j < maxOrdersPerType; j++)
             {
                 orderPlanesInPlaneMenu[i][j] = GameObject.Find(tempPlaneName + j);
-                orderPlanesInPlaneMenu[i][j].SetActive(false);
+                //orderPlanesInPlaneMenu[i][j].SetActive(false);
             }
         }
+
+        HideConditionalPlanse();
         planeMenu.SetActive(false);
     }
 
-    public void ShowRightOrderPlanes()
+    public void HideConditionalPlanse()
+    {
+        for (int i = 0; i < noOfPlaneTypes; i++)
+        {
+            for (int j = 0; j < maxOrdersPerType; j++)
+            {
+                 orderPlanesInPlaneMenu[i][j].SetActive(false);
+            }
+        }
+
+        stuffPlanesInPlaneMenu[assignPlaneIndex].SetActive(false);
+    }
+
+    public void ShowRightPlanesInMenu()
     {
         for (int i = 0; i < noOfPlaneTypes; i++)
         {
             for (int j = 0; j < maxOrdersPerType; j++)
             {
                 if (j < activeOrders[i])
-                orderPlanesInPlaneMenu[i][j].SetActive(true);
+                {
+                    orderPlanesInPlaneMenu[i][j].SetActive(true);
+                }
             }
+        }
+
+        if (hiredPerson != null)
+        {
+            stuffPlanesInPlaneMenu[assignPlaneIndex].SetActive(true);
         }
     }
 
