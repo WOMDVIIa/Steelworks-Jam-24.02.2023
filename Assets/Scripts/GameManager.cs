@@ -78,11 +78,11 @@ public class GameManager : MonoBehaviour
                     break;
 
                 case 1:
-                    tempPlaneName = "Write";
+                    tempPlaneName = "Draw";
                     break;
 
                 case 0:
-                    tempPlaneName = "Draw";
+                    tempPlaneName = "Write";
                     break;
             }
 

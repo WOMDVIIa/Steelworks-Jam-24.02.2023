@@ -47,6 +47,10 @@ public class PlaneFlight : MonoBehaviour
                         AssignEmployer(other);
                     }
                     break;
+
+                case 2:
+
+                    break;
             }
         }
     }
