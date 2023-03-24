@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 187869543418866680}
   - component: {fileID: 1800196377}
+  - component: {fileID: 6184187776385387362}
   m_Layer: 0
   m_Name: Job Slot
   m_TagString: Job Slot
@@ -41,11 +42,24 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6553917697514264860}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6184187776385387362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6553917697514264860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c793d773d6b186c4aa46644a621e5ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  employer: {fileID: 0}
 --- !u!1001 &1523307672436952158
 PrefabInstance:
   m_ObjectHideFlags: 0

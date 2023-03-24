@@ -44,7 +44,7 @@ public class MovePlayer : MonoBehaviour
         gameObject.transform.Rotate(Vector3.back, horizontalInput * rotationMultiplayer * Time.deltaTime);
     }
 
-    void ThrowPlane(/*float force*/)
+    void ThrowPlane()
     {
         if (!GameManager.instance.playerInside)
         {
@@ -59,9 +59,12 @@ public class MovePlayer : MonoBehaviour
                 newPlane = Instantiate(planePrefabs[1], transform.position, transform.rotation);
                 AddForceToPlane(newPlane);
             }
-
+            else
+            {
+                newPlane = Instantiate(planePrefabs[0], transform.position, transform.rotation);
+                AddForceToPlane(newPlane);
+            }
         }
-        //force = 0;
     }
 
     void AddForceToPlane(GameObject plane)

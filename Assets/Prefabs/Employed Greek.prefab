@@ -720,6 +720,8 @@ MonoBehaviour:
   - {fileID: 4937401872841351917}
   - {fileID: 1690509774557811642}
   - {fileID: 5992196427344213695}
+  playerWithCameraObject: {fileID: 0}
+  assignedPrefab: {fileID: 7977611906075166402, guid: 14a92c14c0d3f5c499746ac956a3e749, type: 3}
 --- !u!1 &7937564794630228433
 GameObject:
   m_ObjectHideFlags: 0

@@ -59,8 +59,8 @@ public class UnemployedPerson : PersonStats
         {
             Destroy(GameManager.instance.hiredPerson);
         }
-        GameManager.instance.hiredPerson = Instantiate(hiredPrefab, hiredLocation, transform.rotation);
         GameManager.instance.hiredPersonSkillSet = skillSet;
+        GameManager.instance.hiredPerson = Instantiate(hiredPrefab, hiredLocation, transform.rotation);
         Destroy(gameObject);
     }
 }

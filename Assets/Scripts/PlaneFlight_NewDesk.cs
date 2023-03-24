@@ -8,21 +8,22 @@ public class PlaneFlight_NewDesk : PlaneFlight
 
     bool tooCloseToAnotherDesk = false;
 
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Job Slot"))
+        if (other.gameObject.CompareTag("Job Slot"))
         {
             tooCloseToAnotherDesk = true;
             Debug.Log("Too Close!");
         }
-        else
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Builder") && !tooCloseToAnotherDesk)
         {
-            if (collision.gameObject.CompareTag("Builder") && !tooCloseToAnotherDesk)
-            {
-                Vector3 location = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -0.1f);
-                Instantiate(jobSlot, location, jobSlot.transform.rotation);
-            }
-            Destroy(gameObject);
+            Vector3 location = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -0.1f);
+            Instantiate(jobSlot, location, jobSlot.transform.rotation);
         }
+        Destroy(gameObject);
     }
 }

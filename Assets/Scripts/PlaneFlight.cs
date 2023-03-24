@@ -26,8 +26,42 @@ public class PlaneFlight : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Job Slot"))
+        {
+            JobSlot deskHit = other.gameObject.GetComponent<JobSlot>();
+
+            switch (GameManager.instance.selectedPlaneIndex)
+            {
+                case 0:     //Fire
+                    if (deskHit.employer != null)
+                    {
+                        Debug.Log("Zwalniamy");
+                    }
+                    break;
+
+                case 1:     //Assign
+                    if (deskHit.employer == null/* && GameManager.instance.hiredPerson != null*/)
+                    {
+                        AssignEmployer(other);
+                        Destroy(GameManager.instance.hiredPerson);
+                    }
+                    break;
+            }
+        }
+    }
+
+    void AssignEmployer(Collider other)
+    {
+        Quaternion assignRotation = new Quaternion(0, 0, 0.5f, 0);
+        GameObject newAssign = Instantiate(GameManager.instance.hiredPerson.GetComponent<EmployedPerson>().assignedPrefab, other.transform.position, assignRotation);
+        newAssign.transform.parent = other.transform;
+        GameManager.instance.stuffPlanesInPlaneMenu[0].GetComponent<PlaneSelect>().ActualSelection();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(gameObject);
+        Destroy(gameObject);        
     }
 }

@@ -20,12 +20,17 @@ public class PlaneSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        ActualSelection();
+    }
+
+    public void ActualSelection()
+    {
         if (GameManager.instance.playerInside)
         {
             GameManager.instance.DeselectAll();
             GameManager.instance.FillSelectedPlaneIndex(this.gameObject);
             select.SetActive(true);
-        }
+        }    
     }
 
     public void Deselect()

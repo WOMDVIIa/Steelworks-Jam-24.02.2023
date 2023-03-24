@@ -5,6 +5,7 @@ using UnityEngine;
 public class EmployedPerson : PersonStats
 {
     [SerializeField] protected GameObject playerWithCameraObject;
+    public GameObject assignedPrefab;
 
     // Start is called before the first frame update
     void Start()

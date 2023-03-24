@@ -11,7 +11,7 @@ public class PersonStats : MonoBehaviour
 
     protected float[] skillSet;
 
-    protected void OnMouseOver()
+    public void OnMouseOver()
     {
         if (!GameManager.instance.planeMenu.activeSelf)
         {
