@@ -57,6 +57,8 @@ public class PlaneFlight : MonoBehaviour
         Quaternion assignRotation = new Quaternion(0, 0, 0.5f, 0);
         GameObject newAssign = Instantiate(GameManager.instance.hiredPerson.GetComponent<EmployedPerson>().assignedPrefab, other.transform.position, assignRotation);
         newAssign.transform.parent = other.transform;
+        other.gameObject.GetComponent<JobSlot>().employer = newAssign;
+        //newAssign.GetComponent<SphereCollider>() = other.GetComponent<SphereCollider>();
         GameManager.instance.stuffPlanesInPlaneMenu[0].GetComponent<PlaneSelect>().ActualSelection();
     }
 

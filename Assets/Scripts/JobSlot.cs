@@ -5,15 +5,20 @@ using UnityEngine;
 public class JobSlot : MonoBehaviour
 {
     public GameObject employer;
-    // Start is called before the first frame update
-    void Start()
+
+    private void OnMouseOver()
     {
-        
+        if (employer != null)
+        {
+            employer.GetComponent<PersonStats>().OnMouseOver();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnMouseExit()
     {
-        
+        if (employer != null)
+        {
+            employer.GetComponent<PersonStats>().OnMouseExit();
+        }
     }
 }

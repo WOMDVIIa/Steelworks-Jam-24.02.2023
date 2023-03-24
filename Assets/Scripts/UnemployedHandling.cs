@@ -54,6 +54,7 @@ public class UnemployedHandling : MonoBehaviour
         {
             int nationIndex = Random.Range(0, unemployedPrefabs.Length);
             listOfWaitingUnemployed[tempIndex] = Instantiate(unemployedPrefabs[nationIndex], unemployedCoordinates[tempIndex], unemployedPrefabs[nationIndex].transform.rotation);
+            listOfWaitingUnemployed[tempIndex].transform.parent = gameObject.transform;
             nextUnemployedTimer = Random.Range(minWaitingForNextUnemployed, maxWaitingForNextUnemployed);
         }
         else
