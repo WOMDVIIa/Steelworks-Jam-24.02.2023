@@ -60,6 +60,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   employer: {fileID: 0}
+  table: {fileID: 8955777092700086835}
+  tablesWithEQ:
+  - {fileID: 7280087655519568139, guid: f7b81f012da9d06479b822b4f24e3541, type: 3}
+  - {fileID: 7280087655519568139, guid: 47ef5494e297a5d4296f8e76202f4645, type: 3}
+  - {fileID: 7280087655519568139, guid: 56aa70fc9a6763e4da4ed7ae464ebe3d, type: 3}
+  tableIndex: 0
 --- !u!1001 &1523307672436952158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -120,5 +126,10 @@ PrefabInstance:
 --- !u!4 &8309812635287103112 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7381825099997670102, guid: 6d2ab3824a88aa54483c7e86c8f1bf8c, type: 3}
+  m_PrefabInstance: {fileID: 1523307672436952158}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8955777092700086835 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7596076759670550125, guid: 6d2ab3824a88aa54483c7e86c8f1bf8c, type: 3}
   m_PrefabInstance: {fileID: 1523307672436952158}
   m_PrefabAsset: {fileID: 0}

@@ -497,7 +497,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &229901373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2249,7 +2249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 187869543418866680, guid: b81a5ac41327bd54a9ae70b5993949b7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.80622447
+      value: 1.509
       objectReference: {fileID: 0}
     - target: {fileID: 187869543418866680, guid: b81a5ac41327bd54a9ae70b5993949b7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2283,6 +2283,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6184187776385387362, guid: b81a5ac41327bd54a9ae70b5993949b7, type: 3}
+      propertyPath: tablesWithEQ.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6184187776385387362, guid: b81a5ac41327bd54a9ae70b5993949b7, type: 3}
+      propertyPath: tablesWithEQ.Array.data[0]
+      value: 
+      objectReference: {fileID: 7280087655519568139, guid: f7b81f012da9d06479b822b4f24e3541, type: 3}
+    - target: {fileID: 6184187776385387362, guid: b81a5ac41327bd54a9ae70b5993949b7, type: 3}
+      propertyPath: tablesWithEQ.Array.data[1]
+      value: 
+      objectReference: {fileID: 7280087655519568139, guid: 47ef5494e297a5d4296f8e76202f4645, type: 3}
+    - target: {fileID: 6184187776385387362, guid: b81a5ac41327bd54a9ae70b5993949b7, type: 3}
+      propertyPath: tablesWithEQ.Array.data[2]
+      value: 
+      objectReference: {fileID: 7280087655519568139, guid: 56aa70fc9a6763e4da4ed7ae464ebe3d, type: 3}
     - target: {fileID: 6553917697514264860, guid: b81a5ac41327bd54a9ae70b5993949b7, type: 3}
       propertyPath: m_Name
       value: Job Slot

@@ -9,6 +9,10 @@ public class PlaneFlight : MonoBehaviour
 
     protected Rigidbody ownRb;
 
+    Quaternion assignRotation = new Quaternion(0, 0, 0.5f, 0);
+    Vector3 tableOffset = new Vector3(0, -0.25f, 0);
+    Vector3 assignOffset = new Vector3(0, 0, 0.1f);
+
     // Start is called before the first frame update
     protected void Start()
     {
@@ -32,38 +36,49 @@ public class PlaneFlight : MonoBehaviour
         {
             JobSlot deskHit = other.gameObject.GetComponent<JobSlot>();
 
-            switch (GameManager.instance.selectedPlaneIndex)
+            if (GameManager.instance.selectedPlaneIndex < 2)    // 0-1
             {
-                case 0:     //Fire
-                    if (deskHit.employer != null)
-                    {
-                        Destroy(deskHit.employer);
-                    }
-                    break;
+                switch (GameManager.instance.selectedPlaneIndex)
+                {
+                    case 0:     //Fire
+                        if (deskHit.employer != null)
+                        {
+                            Destroy(deskHit.employer);
+                        }
+                        break;
 
-                case 1:     //Assign
-                    if (deskHit.employer == null)
-                    {
-                        AssignEmployer(other);
-                    }
-                    break;
+                    case 1:     //Assign
+                        if (deskHit.employer == null)
+                        {
+                            AssignEmployer(other);
+                        }
+                        break;
+                }
+            }
+            else if (GameManager.instance.selectedPlaneIndex < 5)   // 2-4
+            {
+                if (deskHit.tableIndex == (int)JobSlot.tableType.empty)
+                {
+                    Destroy(deskHit.table);
+                    deskHit.table = Instantiate(deskHit.tablesWithEQ[GameManager.instance.selectedPlaneIndex - 2], other.transform.position + tableOffset, assignRotation);
+                    deskHit.table.transform.parent = other.transform;
 
-                case 2:
-
-                    break;
+                }
+            }
+            else if (GameManager.instance.selectedPlaneIndex > 5)   // 6+
+            {
+            
             }
         }
     }
 
     void AssignEmployer(Collider other)
     {
-        Quaternion assignRotation = new Quaternion(0, 0, 0.5f, 0);
-        GameObject newAssign = Instantiate(GameManager.instance.hiredPerson.GetComponent<EmployedPerson>().assignedPrefab, other.transform.position, assignRotation);
+        GameObject newAssign = Instantiate(GameManager.instance.hiredPerson.GetComponent<EmployedPerson>().assignedPrefab, other.transform.position + assignOffset, assignRotation);
         newAssign.transform.parent = other.transform;
         other.gameObject.GetComponent<JobSlot>().employer = newAssign;
         GameManager.instance.stuffPlanesInPlaneMenu[0].GetComponent<PlaneSelect>().ActualSelection();
         Destroy(GameManager.instance.hiredPerson);
-
     }
 
     private void OnCollisionEnter(Collision collision)
