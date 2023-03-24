@@ -37,15 +37,14 @@ public class PlaneFlight : MonoBehaviour
                 case 0:     //Fire
                     if (deskHit.employer != null)
                     {
-                        Debug.Log("Zwalniamy");
+                        Destroy(deskHit.employer);
                     }
                     break;
 
                 case 1:     //Assign
-                    if (deskHit.employer == null/* && GameManager.instance.hiredPerson != null*/)
+                    if (deskHit.employer == null)
                     {
                         AssignEmployer(other);
-                        Destroy(GameManager.instance.hiredPerson);
                     }
                     break;
             }
@@ -58,8 +57,9 @@ public class PlaneFlight : MonoBehaviour
         GameObject newAssign = Instantiate(GameManager.instance.hiredPerson.GetComponent<EmployedPerson>().assignedPrefab, other.transform.position, assignRotation);
         newAssign.transform.parent = other.transform;
         other.gameObject.GetComponent<JobSlot>().employer = newAssign;
-        //newAssign.GetComponent<SphereCollider>() = other.GetComponent<SphereCollider>();
         GameManager.instance.stuffPlanesInPlaneMenu[0].GetComponent<PlaneSelect>().ActualSelection();
+        Destroy(GameManager.instance.hiredPerson);
+
     }
 
     private void OnCollisionEnter(Collision collision)
