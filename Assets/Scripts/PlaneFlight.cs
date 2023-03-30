@@ -6,6 +6,7 @@ public class PlaneFlight : MonoBehaviour
 {
     protected float instantiateTime;
     protected float destroyVelocityThreshold = 0.1f;
+    protected int thisPlaneIndex;
 
     protected Rigidbody ownRb;
 
@@ -18,6 +19,7 @@ public class PlaneFlight : MonoBehaviour
     {
         instantiateTime = Time.time;
         ownRb = GetComponent<Rigidbody>();
+        thisPlaneIndex = GameManager.instance.selectedPlaneIndex;
     }
 
     // Update is called once per frame
@@ -36,9 +38,9 @@ public class PlaneFlight : MonoBehaviour
         {
             JobSlot deskHit = other.gameObject.GetComponent<JobSlot>();
 
-            if (GameManager.instance.selectedPlaneIndex < 2)    // 0-1
+            if (thisPlaneIndex < 2)    // 0-1
             {
-                switch (GameManager.instance.selectedPlaneIndex)
+                switch (thisPlaneIndex)
                 {
                     case 0:     //Fire
                         if (deskHit.employer != null)
@@ -55,17 +57,17 @@ public class PlaneFlight : MonoBehaviour
                         break;
                 }
             }
-            else if (GameManager.instance.selectedPlaneIndex < 5)   // 2-4
+            else if (thisPlaneIndex < 5)   // 2-4
             {
                 if (deskHit.tableIndex == (int)JobSlot.tableType.empty)
                 {
                     Destroy(deskHit.table);
-                    deskHit.table = Instantiate(deskHit.tablesWithEQ[GameManager.instance.selectedPlaneIndex - 2], other.transform.position + tableOffset, assignRotation);
+                    deskHit.table = Instantiate(deskHit.tablesWithEQ[thisPlaneIndex - 2], other.transform.position + tableOffset, assignRotation);
                     deskHit.table.transform.parent = other.transform;
 
                 }
             }
-            else if (GameManager.instance.selectedPlaneIndex > 5)   // 6+
+            else if (thisPlaneIndex > 5)   //6+
             {
             
             }
